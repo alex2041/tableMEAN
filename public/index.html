@@ -12,41 +12,41 @@
 <body ng-app="tableApp">
 	<div class="container">
         <div>
-			<div class="container" ng-controller="ServicesCtrl">
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>&nbsp</th>
+		<div class="container" ng-controller="ServicesCtrl">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>&nbsp</th>
 
-						</tr>
-						<tr>
-							<td>
-								<input id="fieldA" class="from-control" ng-model="serviceClient.name" />
-							</td>
+					</tr>
+					<tr>
+						<td>
+							<input id="fieldA" class="from-control" ng-model="serviceClient.name" />
+						</td>
 
-							<td>
-								<button class="btn btn-primary" ng-click="create()">Add</button>
-							</td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat="serviceClient in serviceClients">
-							<td>
-								<span>
-									<div onclick="toggle(this)" class="show" ng-click="select(serviceClient._id)">{{serviceClient.name}}</div>
-									<input class="hide" type="text" ng-enter="update(serviceClient)" ng-model="serviceClient.name" />
-								</span>
-							</td>
-							<td>
-								<button ng-click="remove(serviceClient._id)" class="btn btn-danger">Remove</button>
-							</td>
-						</tr>
-						
-					</tbody>
-				</table>
-				{{ serviceClients }}
-			</div>
+						<td>
+							<button class="btn btn-primary" ng-click="create()">Add</button>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="serviceClient in serviceClients">
+						<td>
+							<span>
+								<div onclick="toggle(this)" class="show" ng-click="select(serviceClient._id)">{{serviceClient.name}}</div>
+								<input class="hide" type="text" ng-enter="update(serviceClient)" ng-model="serviceClient.name" />
+							</span>
+						</td>
+						<td>
+							<button ng-click="remove(serviceClient._id)" class="btn btn-danger">Remove</button>
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+			{{ serviceClients }}
+		</div>
         </div>
     </div>
 </body>
